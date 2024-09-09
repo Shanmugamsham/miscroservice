@@ -9,7 +9,7 @@ require('dotenv').config()
     host: 'mysql-apim-uat-db-server.mysql.database.azure.com',  
     user: 'mysqlapimdbadminuser',       
     password: 'wtt@sql@112',             
-    database: 'internal_testing',        
+    database: 'ns_notifications',        
     port: 3306,                          
     // ssl: {
     //   rejectUnauthorized: true,         
