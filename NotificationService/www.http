@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notificationactive
+# Content-Type:application/json
+
+# {
+#  "tournamentName": "World Table Tennis Championship",
+#  "location": "Tokyo",
+#  "date" : "2024-12-01"
+# }

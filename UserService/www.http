@@ -1,0 +1,15 @@
+
+GET  http://localhost:3002/api/getsubscribeduser
+
+
+###
+POST http://localhost:3002/api/adduser
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "secretpassword",
+    "is_subscribed":true,
+    "subscription_type": "premium"
+}

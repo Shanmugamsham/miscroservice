@@ -1,0 +1,9 @@
+
+POST http://localhost:3000/api/addnewtournament
+Content-Type:application/json
+
+{
+ "tournamentName": "World Table Tennis Championship",
+ "location": "Tokyo",
+ "date" : "2024-12-01"
+}
