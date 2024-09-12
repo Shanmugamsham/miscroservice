@@ -59,7 +59,7 @@ exports.adduser=async(req,res,next)=>{
 
 
 exports.userdata=async(req,res,next)=>{
-
+console.log("working");
 
     try {
         

@@ -1,0 +1,4 @@
+{
+    "messageaddtournamnets":"Hello! A new tournament is coming up: {{tournamentName}}. It will be held at {{location}} on {{date}}. Get ready to cheer for the participants!",
+     "messageschedule" :"Get ready for the {{tournamentName}} in {{city}}!  The tournament will be held from {{startDate}} to {{endDate}} at {{venue}}, {{country}}. Don’t miss the action!"
+    }

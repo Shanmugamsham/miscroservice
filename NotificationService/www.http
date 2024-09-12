@@ -1,8 +1,21 @@
 POST http://localhost:3001/api/notificationactive
-# Content-Type:application/json
+ Content-Type:application/json
 
-# {
-#  "tournamentName": "World Table Tennis Championship",
-#  "location": "Tokyo",
-#  "date" : "2024-12-01"
+{
+  "tournamentName": "World Table Tennis Championship",
+  "location": "Tokyo",
+  "date" : "2024-12-01"
+ }
+
+#  {
+#   "newTournament" : {
+#                 "tournamentId": "WTT_20240911",
+#                 "tournamentName": "WTT Open 2024",
+#                  "startDate": "2024-11-01",
+#                 "endDate": "2024-11-07",
+#                 "city": "Tokyo",
+#                 "country": "Japan",
+#                "venue": "Tokyo Dome"
+#             },
+#  "messageType" : {"message": "messageschedule" }
 # }
