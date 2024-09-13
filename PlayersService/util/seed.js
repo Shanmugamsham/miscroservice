@@ -4,8 +4,8 @@ require('dotenv').config();
 const createPlayersTable = () => {
     const sql = `
     CREATE TABLE IF NOT EXISTS ps_table_players(
-      player_id INT AUTO_INCREMENT PRIMARY KEY,
-      player_name VARCHAR(255) NOT NULL,
+      playerId VARCHAR(20) PRIMARY KEY,
+      playerName VARCHAR(255) NOT NULL,
       country VARCHAR(100) NOT NULL,
       ranking INT NOT NULL,
       birth_date DATE,

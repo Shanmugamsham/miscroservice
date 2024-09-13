@@ -13,7 +13,7 @@ app.use(express.json())
 
 const port=process.env.PORT
 app.listen(port,()=>{
-   console.log(`http://localhost:${port}`);
+   console.log(`Playerservice:http://localhost:${port}`);
    
 })
 

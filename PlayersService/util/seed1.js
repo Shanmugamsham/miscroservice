@@ -4,10 +4,11 @@ require('dotenv').config();
 const createPlayersTable = () => {
     const sql = `
     CREATE TABLE IF NOT EXISTS ps_table_participants(
-       playerId VARCHAR(20) PRIMARY KEY,
+       playerId VARCHAR(20), 
        playerName VARCHAR(255),
        ranking INT,
-      country VARCHAR(100)
+       country VARCHAR(100),
+      FOREIGN KEY (playerId) REFERENCES ps_table_players(playerId) 
     );
   `;
     db.query(sql, (err, result) => {

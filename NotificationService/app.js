@@ -11,7 +11,7 @@ app.use("/api",route)
 
 const port=process.env.PORT
 app.listen(port,()=>{
-   console.log(`http://localhost:${port}`);
+   console.log(`NotificationService:http://localhost:${port}`);
    
 })
 

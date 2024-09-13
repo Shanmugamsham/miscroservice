@@ -33,7 +33,7 @@ exports.adduser=async(req,res,next)=>{
         const result = await query(sqlInsert, Userdata);
         return res.status(201).json({
             success: true,
-            message: ' Userdata added successfully',
+            message: ' User data added successfully',
             tournamentId: result.insertId  
         });
 
@@ -71,7 +71,7 @@ console.log("working");
         const result = await query(sqlSelect, requireddata);
         return res.status(201).json({
             success: true,
-            message: ' Userdata get successfully',
+            message: 'User data retrieved successfully',
             result
         });
 

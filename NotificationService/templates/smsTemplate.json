@@ -1,4 +1,9 @@
 {
     "messageaddtournamnets":"Hello! A new tournament is coming up: {{tournamentName}}. It will be held at {{location}} on {{date}}. Get ready to cheer for the participants!",
-     "messageschedule" :"Get ready for the {{tournamentName}} in {{city}}!  The tournament will be held from {{startDate}} to {{endDate}} at {{venue}}, {{country}}. Don’t miss the action!"
+     "messageschedule" :"Get ready for the {{tournamentName}} in {{city}}!  The tournament will be held from {{startDate}} to {{endDate}} at {{venue}}, {{country}}. Don’t miss the action!",
+     "startingmatch":"New Live Match Started!- Status: {{liveStatus}}- Current Set:{{currentSet}}-Players:1. {{players1.playerName}} ({{players1.country}}), Ranking: {{players1.ranking}}  2. {{players2.playerName}} ({{players2.country}}), Ranking: {{players2.ranking}}-Match Time: {{matchTime}}",
+    "endingmatch": "The match has ended! - Match ID: {{liveMatchId}} - Final Status: {{liveStatus}} - Final Score: {{score}} - Congratulations to the winner: {{winnerPlayerName}}!"
+      
+      
     }
+

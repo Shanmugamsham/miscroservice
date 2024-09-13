@@ -7,9 +7,9 @@ POST http://localhost:3002/api/adduser
 Content-Type: application/json
 
 {
-    "name": "shandy",
-    "email": "shandy.doe@example.com",
+    "name": "max",
+    "email": "max.doe@example.com",
     "password": "secretpassword",
     "is_subscribed":true,
-    "subscription_type": "free"
+    "subscription_type": "premium"
 }

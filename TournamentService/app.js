@@ -13,7 +13,7 @@ const route = require("./Routes/route");
 
  const port=process.env.PORT
  app.listen(port,()=>{
-    console.log(`http://localhost:${port}`);
+    console.log(`TournamentService:http://localhost:${port}`);
     
  })
 

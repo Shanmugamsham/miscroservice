@@ -58,6 +58,7 @@ exports.notification=async(req,res,next)=>{
      
      message=message[messagetype]
     
+     console.log(message);
      
 
      try {
@@ -100,6 +101,7 @@ exports.notification=async(req,res,next)=>{
                message: "NotificationService",
                 error: 'Database error: ' + error.message,
             });
+            
          }
 
          if (successfulnotification.length > 0) {

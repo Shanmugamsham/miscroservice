@@ -6,7 +6,8 @@ Content-Type:application/json
     "tournaments": [
         {
             "tournamentName": "Championship 2024",
-            "location": "New York"
+            "location": "New York",
+            "date": "2024-08-15"
         },
         {
             "tournamentName": "Summer Cup",
@@ -23,7 +24,7 @@ Content-Type:application/json
 {
   "tournaments": [
     {
-      "tournamentId": "WTT_20240910",
+      "tournamentId": "WTT_ADA00",
       "tournamentName": "WTT Championship 2024",
       "startDate": "2024-10-01",
       "endDate": "2024-10-10",
@@ -34,20 +35,26 @@ Content-Type:application/json
       },
       "participants": [
         {
-          "playerId": "ATP123",
-          "playerName": "Fan Zhendong",
+          "playerId": "B1",
+          "playerName": "jon",
           "ranking": 1,
           "country": "China"
         },
         {
-          "playerId": "ATP456",
-          "playerName": "Ma Long",
+          "playerId": "B2",
+          "playerName": "max",
           "ranking": 2,
           "country": "China"
         },
         {
-          "playerId": "ATP789",
-          "playerName": "Tomokazu Harimoto",
+          "playerId": "B3",
+          "playerName": "shan",
+          "ranking": 3,
+          "country": "Japan"
+        },
+         {
+          "playerId": "B4",
+          "playerName": "alex",
           "ranking": 3,
           "country": "Japan"
         }
@@ -55,22 +62,24 @@ Content-Type:application/json
 
      "matchSchedule": [
         {
-          "matchId": "M013s",
-          "tournamentId": "WTT_20240911",
+          "matchId": "M5",
+          "liveMatchId": "12",
+          "tournamentId": "WTT_ADA0",
           "round": "Semifinals",
           "date": "2024-11-05",
           "time": "10:00",
-          "player1Id": "ATP456ss",
-         "player2Id": "ATP789ss"
+          "player1Id": "B1",
+         "player2Id": "B2"
         },
          {
-          "matchId": "M0s111",
-          "tournamentId": "WTT_20240910",
+          "matchId": "M6",
+           "liveMatchId": "15",
+          "tournamentId": "WTT_ADA0",
           "round": "Quarterfinals",
           "date": "2024-10-03",
           "time": "16:00",
-         "player1Id": "ATP456s",
-         "player2Id": "ATP78s9"
+         "player1Id": "B3",
+         "player2Id": "B4"
         
         }
       ],
@@ -82,7 +91,7 @@ Content-Type:application/json
       }
     },
     {
-      "tournamentId": "WTT_20240911",
+      "tournamentId": "WTT_ADD01",
       "tournamentName": "WTT Open 2024",
       "startDate": "2024-11-01",
       "endDate": "2024-11-07",
@@ -93,13 +102,13 @@ Content-Type:application/json
       },
       "participants": [
         {
-          "playerId": "ATP123",
+          "playerId": "AB1",
           "playerName": "Fan Zhendong",
           "ranking": 1,
           "country": "China"
         },
         {
-          "playerId": "ATP456",
+          "playerId": "AB2",
           "playerName": "Ma Long",
           "ranking": 2,
           "country": "China"
@@ -107,7 +116,8 @@ Content-Type:application/json
       ],
       "matchSchedule": [
         {
-          "matchId": "M013s",
+          "matchId": "M45",
+          "liveMatchId": "18",
           "tournamentId": "WTT_20240911",
           "round": "Semifinals",
           "date": "2024-11-05",
@@ -116,7 +126,8 @@ Content-Type:application/json
          "player2Id": "ATP789ss"
         },
          {
-          "matchId": "M0s111",
+          "matchId": "M46",
+           "liveMatchId": "21",
           "tournamentId": "WTT_20240910",
           "round": "Quarterfinals",
           "date": "2024-10-03",
@@ -136,3 +147,89 @@ Content-Type:application/json
   ]
 }
 
+
+
+
+
+
+
+####
+POST http://localhost:3000/api/matchstarting
+Content-Type:application/json
+{
+  "matches": [
+    {
+      "liveMatchId": "12",
+      "matchId": "M5",
+      "liveStatus": "ongoing",
+      "currentSet": 1,
+      "players": [
+        {
+          "playerId": "B1",
+          "playerName": "jon",
+          "country": "China",
+          "ranking": 1
+        },
+        {
+          "playerId": "B2",
+          "playerName": "max",
+          "country": "China",
+           "ranking": 2
+        }
+      ],
+      "matchTime": "2024-10-02 14:00"
+    },
+    {
+      "liveMatchId": "15",
+      "matchId": "M6",
+      "liveStatus": "ongoing",
+      "currentSet": 1,
+      "players": [
+        {
+          "playerId": "B3",
+          "playerName": "shan",
+          "country": "Japan",
+           "ranking": 3
+        },
+        {
+           "playerId": "B4",
+          "playerName": "alex",
+          "country": "Japan",
+          "ranking": 3
+        }
+      ],
+      "matchTime": "2024-10-03 16:00"
+    } 
+  ]
+}
+
+
+###
+POST http://localhost:3000/api/matchending
+
+
+{
+  "completedMatches": [
+    {
+      "liveMatchId": "12",
+      "liveStatus": "completed",
+      "score": "6-4, 7-6",
+      "winnerPlayerId": "B3",
+      "winnerPlayerName": "Shan"
+    },
+    {
+      "liveMatchId": "15",
+      "liveStatus": "completed",
+      "score": "7-5, 6-3",
+      "winnerPlayerId": "B1",
+      "winnerPlayerName": "jon"
+    },
+    {
+      "liveMatchId": "LM03",
+      "liveStatus": "completed",
+      "score": "6-7, 7-6, 6-4",
+      "winnerPlayerId": "ATP987",
+      "winnerPlayerName": "Hugo Calderano"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ require('dotenv').config()
     host: 'mysql-apim-uat-db-server.mysql.database.azure.com',  
     user: 'mysqlapimdbadminuser',       
     password: 'wtt@sql@112',             
-    database: 'ns_notifications',        
+    database: 'notificationservicedb',        
     port: 3306,                          
     // ssl: {
     //   rejectUnauthorized: true,         

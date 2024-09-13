@@ -20,7 +20,7 @@ require('dotenv').config()
     host: 'mysql-apim-uat-db-server.mysql.database.azure.com',  
     user: 'mysqlapimdbadminuser',       
     password: 'wtt@sql@112',             
-    database: 'ts_addtournament',        
+    database: 'tournamentservicedb',        
     port: 3306,                          
     // ssl: {
     //   rejectUnauthorized: true,         

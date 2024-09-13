@@ -17,8 +17,8 @@ exports.participants= async (req, res) => {
    
     if (!Array.isArray(participants) || participants.length === 0) {
         failedparticipants.push({
-            message: 'PlayersServicer expecting Array',
-            error: `Please provide a list of participants`
+           message: 'PlayersService expects an array',
+            error: 'Please provide a list of participants'
         });
         
         return res.status(400).json({
@@ -62,13 +62,26 @@ exports.participants= async (req, res) => {
     
             try {
                 
-                let sqlInsert = 'INSERT INTO  ps_table_participants SET ?';
-                const result = await query(sqlInsert, participants);
 
-                successfulparticipants.push({
+                let sqlCheck = 'SELECT COUNT(*) AS count FROM  ps_table_players WHERE playerId  = ?';
+                const [checkResult] = await query(sqlCheck, [playerId]);
+                  console.log(sqlCheck);
+                  
+                if (checkResult.count > 0) {
+               
+                    let sqlInsert = 'INSERT INTO  ps_table_participants SET ?';
+                    const result = await query(sqlInsert, participants);
+    
+                    successfulparticipants.push({
+                        playerName,
+                       message: 'Participants added successfully'
+                    });
+             } else {
+                 failedparticipants.push({
                     playerName,
-                    message: ' participants added  successfully'
-                });
+                   message: 'Player ID is missing. Please add the player information to the player table',
+                 });
+                }
                 
             } catch (dbError) {
                 
@@ -78,6 +91,7 @@ exports.participants= async (req, res) => {
                     playerId,
                     error: `Database error:${dbError.message}`
                 });
+                continue
             }
             }
 
@@ -86,7 +100,7 @@ exports.participants= async (req, res) => {
          if (successfulparticipants.length > 0) {
             return res.status(201).json({
                 success: true,
-                message: 'participants processed successfully',
+                message: 'Participants processed successfully',
                 successfulparticipants,
                 failedparticipants
             });
